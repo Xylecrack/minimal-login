@@ -1,7 +1,7 @@
 package com.example.loginapp
 
 import android.content.Intent
-import android.net.Uri
+import androidx.core.net.toUri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.githubIcon.setOnClickListener {
             val githubUrl = "https://github.com/Xylecrack"
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl))
+            val intent = Intent(Intent.ACTION_VIEW, (githubUrl.toUri()))
             startActivity(intent)
         }
     }
